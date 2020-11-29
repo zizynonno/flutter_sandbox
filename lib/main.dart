@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,28 +48,21 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.add), Icon(Icons.share)
         ],
       ),
-      body: Container(
-        color: Colors.red,
-        child: Padding(
 
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'You have pushed the button this many times:',
-                ),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ],
-            ),
-          ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('次へ'),
+          onPressed: (){
+            //ここに押したら反応する
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NextPage(),
+              ),
+            );
+          },
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
