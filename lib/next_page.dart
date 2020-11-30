@@ -14,6 +14,15 @@ class NextPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         color: Colors.red,
+        child: Center(
+          child: RaisedButton(
+            child: Text('戻る'),
+              onPressed: () {
+                Navigator.pop(context);
+              }
+
+          ),
+        ),
       ),
     );
   }
