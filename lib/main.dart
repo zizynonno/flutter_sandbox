@@ -6,8 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
+  // This widget is the root of your application.  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
@@ -54,11 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text('次へ'),
           onPressed: (){
             //ここに押したら反応する
-            Navigator.push(
+            final result = Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NextPage(),
+              MaterialPageRoute(builder: (context) => NextPage('zizynonno'),
               ),
             );
+            print(result);
           },
         ),
       ),
