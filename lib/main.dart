@@ -48,18 +48,32 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
 
-      body: Center(
-        child: RaisedButton(
-          child: Text('次へ'),
-          onPressed: (){
-            //ここに押したら反応する
-            final result = Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage('zizynonno'),
-              ),
-            );
-            print(result);
-          },
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.access_alarm,
+              size: 200,
+            ),
+            Image.asset('images/octocat.png'),
+            const Image(
+              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+            ),
+            RaisedButton(
+              child: Text('次へ'),
+              onPressed: (){
+                //ここに押したら反応する
+                final result = Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage('zizynonno'),
+                  ),
+                );
+                print(result);
+              },
+            ),
+          ],
         ),
       ),
 
