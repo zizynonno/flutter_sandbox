@@ -47,20 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.add), Icon(Icons.share)
         ],
       ),
-
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
-              Icons.access_alarm,
-              size: 200,
+            TextFormField(
+              autofocus: true,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: '田中太郎'
+              ),
             ),
-            Image.asset('images/octocat.png'),
-            const Image(
-              image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
-            ),
+
             RaisedButton(
               child: Text('次へ'),
               onPressed: (){
