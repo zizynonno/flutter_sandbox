@@ -30,13 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,38 +41,26 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextFormField(
-              autofocus: true,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: '田中太郎'
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.map),
+                title: Text('Map'),
               ),
-            ),
+              ListTile(
+                leading: Icon(Icons.photo_album),
+                title: Text('Album'),
+              ),
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text('Phone'),
+              ),
+            ],
+          )
 
-            RaisedButton(
-              child: Text('次へ'),
-              onPressed: (){
-                //ここに押したら反応する
-                final result = Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NextPage('zizynonno'),
-                  ),
-                );
-                print(result);
-              },
-            ),
-          ],
-        ),
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+
+      ); // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
