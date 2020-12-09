@@ -41,32 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Container(
-          child: ListView(
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.info),
-                title: Text('お問い合わせ'),
-                trailing: Icon(Icons.arrow_forward_ios),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NextPage('あいうえおんがく')
-                    )
-
-                  );
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.photo_album),
-                title: Text('Album'),
-              ),
-              ListTile(
-                leading: Icon(Icons.phone),
-                title: Text('Phone'),
-              ),
-            ],
-          )
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(100, (index) {
+              return Center(
+                child: Text(
+                  'Item $index',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              );
+            }),
+          ),
 
       ),
 
