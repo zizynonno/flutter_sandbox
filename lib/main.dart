@@ -44,8 +44,18 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
             children: <Widget>[
               ListTile(
-                leading: Icon(Icons.map),
-                title: Text('Map'),
+                leading: Icon(Icons.info),
+                title: Text('お問い合わせ'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NextPage('あいうえおんがく')
+                    )
+
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.photo_album),
